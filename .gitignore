@@ -1,2 +1,8 @@
 *.o
 clewarecontrol
+*~
+_cleware.so
+build
+cleware.py
+cleware.pyc
+cleware_wrap.cxx

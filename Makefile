@@ -4,7 +4,6 @@ DEBUG=-g -W -pedantic #-pg #-fprofile-arcs
 LDFLAGS+=-L/usr/local/hidapi.git/lib -lhidapi-libusb
 CXXFLAGS+=-O3 -Wall -DVERSION=\"$(VERSION)\" $(DEBUG) -I/usr/local/hidapi.git/include
 CFLAGS+=$(CXXFLAGS)
-SETUPPY_INSTALLTO=--user
 
 OBJS=main.o USBaccess.o USBaccessBasic.o error.o
 TRANSLATIONS=nl.mo
@@ -18,7 +17,7 @@ clewarecontrol: $(OBJS) $(TRANSLATIONS)
 	$(CXX) $(OBJS) $(LDFLAGS) -o clewarecontrol
 
 cleware_python cleware_python3:  pyswig
-	$(subst cleware_,,$@) setup.py install $(SETUPPY_INSTALLTO)
+	$(subst cleware_,,$@) setup.py install
 
 pyswig:
 	swig -c++ -python cleware.i

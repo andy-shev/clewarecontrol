@@ -91,8 +91,7 @@ def device_id_to_string(device_type):
                 return "Counter device"
         if device_type == cleware.CUSBaccess.BUTTON_NODEVICE:
                 return "Button no device"
-
-	return "device type not recognized!"
+        return "device type not recognized!"
 
 
 c = cleware.CUSBaccess()
